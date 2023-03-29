@@ -603,7 +603,7 @@ var CdvPurchase;
                             });
                         this.cache[bodyTransactionHash] = {
                             payload: response,
-                            expires: (+new Date()) + 120000, // expires in 2 minutes
+                            expires: (+new Date()) + 5000, // expires in 5 seconds
                         };
                         callback({ receipt, payload: response });
                     },
