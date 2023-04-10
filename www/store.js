@@ -2006,8 +2006,17 @@ var CdvPurchase;
                 const purchase = VerifiedReceipts.find(verifiedReceipts, product);
                 if (!purchase)
                     return false;
-                if (purchase === null || purchase === void 0 ? void 0 : purchase.isExpired)
-                    return true;
+                //if (purchase === null || purchase === void 0 ? void 0 : purchase.isExpired)
+                    //return true;
+                if (purchase === null) {
+                    return false;
+                }
+                if (purchase === undefined) {
+                    return false;
+                }
+                if (purchase.isExpired) {
+                    return false;
+                }
                 if (purchase === null || purchase === void 0 ? void 0 : purchase.expiryDate) {
                     return (purchase.expiryDate > +new Date());
                 }
